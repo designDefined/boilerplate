@@ -20,7 +20,21 @@ module.exports = {
             {
                 test:/\.css$/i,
                 use:["style-loader", "css-loader"]
-            }
+            },
+
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[hash].[ext]'
+                }
+            },
         ]
     }
 };
